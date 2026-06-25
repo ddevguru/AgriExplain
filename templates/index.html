@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriXplain Dashboard</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>AgriXplain</h1>
+    <div class="controls">
+      <select id="cropSelect">
+        <option>Rice</option>
+        <option>Wheat</option>
+        <option>Maize</option>
+        <option>Cotton</option>
+        <option>Tomato</option>
+        <option>Sugarcane</option>
+      </select>
+      <select id="timeRange">
+        <option value="7">7d</option>
+        <option value="30">30d</option>
+      </select>
+      <button id="refreshBtn">🔄 Refresh</button>
+      <select id="langToggle">
+        <option value="en">English</option>
+        <option value="mr">Marathi</option>
+      </select>
+      <button id="exportCsv">Export CSV</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card grid-sensors">
+      <h2>Live Sensors</h2>
+      <div class="sensors-grid">
+        <div class="gauge"><span>Temperature</span><div id="gTemp">-</div></div>
+        <div class="gauge"><span>Humidity</span><div id="gHum">-</div></div>
+        <div class="gauge"><span>Rainfall</span><div id="gRain">-</div></div>
+        <div class="gauge"><span>Soil Moisture</span><div id="gSoil">-</div></div>
+        <div class="gauge"><span>Soil pH</span><div id="gPh">-</div></div>
+        <div class="gauge"><span>Water Flow</span><div id="gFlow">-</div></div>
+        <div class="gauge"><span>Light</span><div id="gLight">-</div></div>
+      </div>
+    </section>
+
+    <section class="card hero">
+      <h2>Yield Prediction</h2>
+      <div class="hero-content">
+        <div>
+          <div>Current Crop: <span id="currentCrop">Rice</span></div>
+          <div class="yield" id="yieldLabel">-</div>
+          <div class="progress"><div id="confidenceBar"></div></div>
+          <div>Confidence: <span id="confidenceText">-</span></div>
+          <div>Uncertainty (95% CI): <span id="uncertainty">-</span></div>
+          <div>Risk Level: <span id="riskLevel">-</span></div>
+        </div>
+        <canvas id="uncertaintyChart" height="100"></canvas>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>SHAP Explainability</h2>
+      <canvas id="shapChart" height="160"></canvas>
+      <div id="shapTooltip" class="tooltip"></div>
+    </section>
+
+    <section class="card">
+      <h2>Advisories</h2>
+      <div id="advice">-</div>
+    </section>
+
+    <section class="card">
+      <h2>Model Comparison</h2>
+      <table id="modelsTable">
+        <thead><tr><th>Model</th><th>Accuracy</th><th>F1-Score</th><th>Uncertainty</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card fullwidth">
+      <h2>Trends</h2>
+      <canvas id="sensorTrends" height="120"></canvas>
+      <canvas id="predictionTrends" height="120"></canvas>
+    </section>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

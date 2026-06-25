@@ -1,0 +1,33 @@
+{
+  "dataset": {
+    "samples": 2200,
+    "test_samples": 440,
+    "seed": 42
+  },
+  "models": {
+    "agrixplain_fusion": {
+      "accuracy": 0.706818,
+      "f1_score": 0.698645
+    },
+    "random_forest": {
+      "accuracy": 0.704545,
+      "f1_score": 0.696173
+    },
+    "xgboost": {
+      "accuracy": 0.690909,
+      "f1_score": 0.684138
+    },
+    "bayesian_ridge": {
+      "accuracy": 0.390909,
+      "f1_score": 0.387234
+    }
+  },
+  "fusion_weights": {
+    "rf": 0.8,
+    "xgb": 0.2
+  },
+  "best_base_model": {
+    "accuracy": "random_forest",
+    "f1_score": "random_forest"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "accuracy": 0.706818,
+  "f1_score": 0.698645,
+  "weights": {
+    "rf": 0.7999999999999999,
+    "xgb": 0.20000000000000007
+  },
+  "decision_rule": {
+    "confidence_gate": 0.55,
+    "dominant_blend": 0.7,
+    "confidence_margin": 0.05
+  },
+  "validation": {
+    "accuracy": 0.698864,
+    "f1_score": 0.688827
+  },
+  "improvement_vs_best_base": {
+    "accuracy_abs": 0.002273,
+    "accuracy_rel_percent": 0.3226,
+    "f1_abs": 0.002471,
+    "f1_rel_percent": 0.355
+  },
+  "description": "Weighted probability fusion of RandomForest and XGBoost (AgriXplain proposed model)."
+}

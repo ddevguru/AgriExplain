@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python paper/generate_final_conference_docx.py)",
+      "Bash(python paper/generate_final_journal_docx.py)",
+      "Bash(python -c ' *)",
+      "Bash(python paper/figures/generate_all_figures.py)",
+      "Bash(del \"AgriXplain_IEEE_Conference_40plus_pages.docx\" \"AgriXplain_IEEE_Conference_40plus_pages_BUILD.docx\" \"AgriXplain_paper.docx\" \"AgriXplain_paper_BUILD.docx\")"
+    ]
+  }
+}
